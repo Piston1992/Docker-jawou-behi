@@ -1,0 +1,7 @@
+sudo:required
+services:
+    - docker   
+before_install:
+    - docker build -t wissemtra -f Dockerfile.dev .
+script:
+    - docker run -e CI=true  wissemtra npm run test
