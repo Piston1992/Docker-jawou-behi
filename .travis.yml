@@ -5,4 +5,4 @@ services:
 before_install:
     - docker build -t wissemtra -f Dockerfile.dev .
 script:
-    - docker run wissemtra npm run test -- --coverage
+    - docker run -e CI=true wissemtra npm run test
